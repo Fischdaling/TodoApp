@@ -1,0 +1,121 @@
+Index: TodoProject/src/components/TodoList.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import  {useState} from \"react\";\r\n\r\nfunction TodoList() {\r\n\r\n}\r\n\r\nexport default TodoList;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/TodoProject/src/components/TodoList.tsx b/TodoProject/src/components/TodoList.tsx
+--- a/TodoProject/src/components/TodoList.tsx	(revision f603d90c1197f94c9cefb466aecdd79b4f43a322)
++++ b/TodoProject/src/components/TodoList.tsx	(date 1732804680006)
+@@ -1,7 +1,13 @@
+-import  {useState} from "react";
++import TodoItem from "./TodoItem.tsx";
+ 
+ function TodoList() {
+-
++    return(
++        <>
++            <h1>TODO APP</h1>
++            <button>Add Todo</button>
++            <TodoItem></TodoItem>
++        </>
++    )
+ }
+ 
+ export default TodoList;
+\ No newline at end of file
+Index: TodoProject/src/components/TodoItem.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/TodoProject/src/components/TodoItem.tsx b/TodoProject/src/components/TodoItem.tsx
+--- a/TodoProject/src/components/TodoItem.tsx	(revision f603d90c1197f94c9cefb466aecdd79b4f43a322)
++++ b/TodoProject/src/components/TodoItem.tsx	(date 1732804491933)
+@@ -1,0 +1,9 @@
++function TodoItem(){
++    return(
++        <>
++
++        </>
++    )
++}
++
++export default TodoItem;
+\ No newline at end of file
+Index: TodoProject/src/App.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import './App.css'\r\n\r\nfunction App() {\r\n\r\n  return (\r\n    <>\r\n\r\n    </>\r\n  )\r\n}\r\n\r\nexport default App\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/TodoProject/src/App.tsx b/TodoProject/src/App.tsx
+--- a/TodoProject/src/App.tsx	(revision f603d90c1197f94c9cefb466aecdd79b4f43a322)
++++ b/TodoProject/src/App.tsx	(date 1732804195568)
+@@ -1,10 +1,11 @@
+ import './App.css'
++import TodoList from "./components/TodoList.tsx";
+ 
+ function App() {
+ 
+   return (
+     <>
+-
++        <TodoList></TodoList>
+     </>
+   )
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"25c21ead-0f2a-4c24-9628-d86a4be6c636\" name=\"Changes\" comment=\"init\">\r\n      <change afterPath=\"$PROJECT_DIR$/TodoProject/src/components/TodoItem.tsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/TodoProject/src/components/TodoList.tsx\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/TodoProject/src/App.tsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/TodoProject/src/App.tsx\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"TypeScript JSX File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Fischdaling&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/Fischdaling/TodoApp.git&quot;,\r\n    &quot;accountId&quot;: &quot;37c2cf19-d051-4b5e-8a3f-7599da6a07dd&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 4\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pTpADtc63hfXCIRTJtgFnuV561\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/onedrive/Spengergasse/4 Semester/WMC/TodoApp&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;ts.external.directory.path&quot;: &quot;D:\\\\onedrive\\\\Spengergasse\\\\4_Semester\\\\WMC\\\\TodoApp\\\\TodoProject\\\\node_modules\\\\typescript\\\\lib&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ReactDesignerToolWindowState\">\r\n    <option name=\"myId2Visible\">\r\n      <map>\r\n        <entry key=\"com.intellij.reactbuddy.reactComponents\" value=\"false\" />\r\n        <entry key=\"com.intellij.reactbuddy.reactInspector\" value=\"false\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-WS-242.20224.426\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"25c21ead-0f2a-4c24-9628-d86a4be6c636\" name=\"Changes\" comment=\"\" />\r\n      <created>1732799774727</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732799774727</updated>\r\n      <workItem from=\"1732799775528\" duration=\"307000\" />\r\n      <workItem from=\"1732800968355\" duration=\"1150000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"init\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732799865440</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732799865440</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"init\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732801102383</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732801102383</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"init\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"init\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f603d90c1197f94c9cefb466aecdd79b4f43a322)
++++ b/.idea/workspace.xml	(date 1732804569784)
+@@ -4,11 +4,11 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="25c21ead-0f2a-4c24-9628-d86a4be6c636" name="Changes" comment="init">
+-      <change afterPath="$PROJECT_DIR$/TodoProject/src/components/TodoItem.tsx" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/TodoProject/src/components/TodoList.tsx" afterDir="false" />
++    <list default="true" id="25c21ead-0f2a-4c24-9628-d86a4be6c636" name="Changes" comment="add components">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/TodoProject/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/src/App.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/TodoProject/src/components/TodoItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/src/components/TodoItem.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/TodoProject/src/components/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/src/components/TodoList.tsx" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -106,7 +106,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1732801102383</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="add components">
++      <option name="closed" value="true" />
++      <created>1732803893763</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1732803893763</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -125,6 +133,7 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="init" />
+-    <option name="LAST_COMMIT_MESSAGE" value="init" />
++    <MESSAGE value="add components" />
++    <option name="LAST_COMMIT_MESSAGE" value="add components" />
+   </component>
+ </project>
+\ No newline at end of file

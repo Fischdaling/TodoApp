@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25c21ead-0f2a-4c24-9628-d86a4be6c636" name="Changes" comment="fixing issues">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoProject/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoProject/src/components/InputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/src/components/InputField.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoProject/src/components/TodoItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/src/components/TodoItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoProject/src/components/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/src/components/TodoList.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="25c21ead-0f2a-4c24-9628-d86a4be6c636" name="Changes" comment="Totally not roboter revidsed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732812077957</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Totally not roboter revidsed">
+      <option name="closed" value="true" />
+      <created>1732815589258</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732815589258</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +164,7 @@
     <MESSAGE value="TodoItem.tsx" />
     <MESSAGE value="Add basic construct to TodoList and TodoItem" />
     <MESSAGE value="fixing issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing issues" />
+    <MESSAGE value="Totally not roboter revidsed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Totally not roboter revidsed" />
   </component>
 </project>

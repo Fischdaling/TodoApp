@@ -1,0 +1,130 @@
+Index: TodoProject/src/components/TodoList.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import TodoItem from \"./TodoItem\";\r\nimport {useState} from \"react\";\r\n\r\nfunction TodoList() {\r\n    const [todos, setTodos] = useState([\r\n        { id: 1, task: \"Learn React\", completed: false },\r\n        { id: 2, task: \"Build a Todo App\", completed: false },\r\n        { id: 3, task: \"Master TypeScript\", completed: false },\r\n    ]);\r\n\r\n    const addTodo = () => {\r\n        const newTodo = {\r\n            id: todos.length + 1,\r\n            task: \"task\",\r\n            completed: false,\r\n        };\r\n        setTodos([...todos, newTodo]);\r\n    };\r\n\r\n    return (\r\n        <>\r\n            <h1>TODO APP</h1>\r\n            <button onClick={addTodo}>Add Todo</button>\r\n            <div>\r\n                {todos.map((todo) => (\r\n                    <TodoItem id={todo.id} task={todo.task} completed={todo.completed}/>\r\n                ))}\r\n            </div>\r\n        </>\r\n    );\r\n}\r\n\r\nexport default TodoList;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/TodoProject/src/components/TodoList.tsx b/TodoProject/src/components/TodoList.tsx
+--- a/TodoProject/src/components/TodoList.tsx	(revision ffbd6cdc6c41f14088659dd0384ab2b25ea4b8df)
++++ b/TodoProject/src/components/TodoList.tsx	(date 1732810898201)
+@@ -8,19 +8,36 @@
+         { id: 3, task: "Master TypeScript", completed: false },
+     ]);
+ 
+-    const addTodo = () => {
++    const addTodo = (task:string) => {
+         const newTodo = {
+             id: todos.length + 1,
+-            task: "task",
++            task: task,
+             completed: false,
+         };
+         setTodos([...todos, newTodo]);
++        setTaskInput("");
++    };
++
++
++    const [taskInput, setTaskInput] = useState("");
++
++    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
++        setTaskInput(e.target.value);
+     };
+ 
+     return (
+         <>
+             <h1>TODO APP</h1>
+-            <button onClick={addTodo}>Add Todo</button>
++            <input
++                type="text"
++                value={taskInput}
++                onChange={handleInputChange}
++                placeholder="Enter new task"
++            />
++            <button onClick={() => addTodo(taskInput)}>
++                Add Todo
++            </button>
++
+             <div>
+                 {todos.map((todo) => (
+                     <TodoItem id={todo.id} task={todo.task} completed={todo.completed}/>
+Index: TodoProject/src/App.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import './App.css'\r\nimport TodoItem from \"./components/TodoItem.tsx\";\r\n\r\nfunction App() {\r\n\r\n  return <TodoItem/>;\r\n}\r\n\r\nexport default App\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/TodoProject/src/App.tsx b/TodoProject/src/App.tsx
+--- a/TodoProject/src/App.tsx	(revision ffbd6cdc6c41f14088659dd0384ab2b25ea4b8df)
++++ b/TodoProject/src/App.tsx	(date 1732808559220)
+@@ -1,9 +1,9 @@
+ import './App.css'
+-import TodoItem from "./components/TodoItem.tsx";
++import TodoList from "./components/TodoList.tsx";
+ 
+ function App() {
+ 
+-  return <TodoItem/>;
++  return <TodoList/>;
+ }
+ 
+ export default App
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"25c21ead-0f2a-4c24-9628-d86a4be6c636\" name=\"Changes\" comment=\"TodoItem.tsx\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/TodoProject/src/App.tsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/TodoProject/src/App.tsx\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"TypeScript JSX File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Fischdaling&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/Fischdaling/TodoApp.git&quot;,\r\n    &quot;accountId&quot;: &quot;37c2cf19-d051-4b5e-8a3f-7599da6a07dd&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 4\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pTpADtc63hfXCIRTJtgFnuV561\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"last_opened_file_path\": \"D:/onedrive/Spengergasse/4 Semester/WMC/TodoApp\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"ts.external.directory.path\": \"C:\\\\Users\\\\Samuel\\\\WebstormProjects\\\\TodoApp\\\\TodoProject\\\\node_modules\\\\typescript\\\\lib\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"ReactDesignerToolWindowState\">\r\n    <option name=\"myId2Visible\">\r\n      <map>\r\n        <entry key=\"com.intellij.reactbuddy.reactComponents\" value=\"false\" />\r\n        <entry key=\"com.intellij.reactbuddy.reactInspector\" value=\"false\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-WS-242.20224.426\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"25c21ead-0f2a-4c24-9628-d86a4be6c636\" name=\"Changes\" comment=\"\" />\r\n      <created>1732799774727</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732799774727</updated>\r\n      <workItem from=\"1732799775528\" duration=\"307000\" />\r\n      <workItem from=\"1732800968355\" duration=\"1150000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"init\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732799865440</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732799865440</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"init\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732801102383</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732801102383</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"deleted headline\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732804032162</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732804032162</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"TodoItem.tsx\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1732804214968</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1732804214968</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"init\" />\r\n    <MESSAGE value=\"deleted headline\" />\r\n    <MESSAGE value=\"TodoItem.tsx\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"TodoItem.tsx\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision ffbd6cdc6c41f14088659dd0384ab2b25ea4b8df)
++++ b/.idea/workspace.xml	(date 1732808774908)
+@@ -4,9 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="25c21ead-0f2a-4c24-9628-d86a4be6c636" name="Changes" comment="TodoItem.tsx">
++    <list default="true" id="25c21ead-0f2a-4c24-9628-d86a4be6c636" name="Changes" comment="Add basic construct to TodoList and TodoItem">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/TodoProject/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/src/App.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/TodoProject/src/components/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/src/components/TodoList.tsx" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -58,7 +59,7 @@
+     "node.js.selected.package.eslint": "(autodetect)",
+     "node.js.selected.package.tslint": "(autodetect)",
+     "nodejs_package_manager_path": "npm",
+-    "ts.external.directory.path": "C:\\Users\\Samuel\\WebstormProjects\\TodoApp\\TodoProject\\node_modules\\typescript\\lib",
++    "ts.external.directory.path": "D:\\onedrive\\Spengergasse\\4_Semester\\WMC\\TodoApp\\TodoProject\\node_modules\\typescript\\lib",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
+@@ -120,7 +121,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1732804214968</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="Add basic construct to TodoList and TodoItem">
++      <option name="closed" value="true" />
++      <created>1732805823348</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1732805823348</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -141,6 +150,7 @@
+     <MESSAGE value="init" />
+     <MESSAGE value="deleted headline" />
+     <MESSAGE value="TodoItem.tsx" />
+-    <option name="LAST_COMMIT_MESSAGE" value="TodoItem.tsx" />
++    <MESSAGE value="Add basic construct to TodoList and TodoItem" />
++    <option name="LAST_COMMIT_MESSAGE" value="Add basic construct to TodoList and TodoItem" />
+   </component>
+ </project>
+\ No newline at end of file
