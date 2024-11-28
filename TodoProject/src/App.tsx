@@ -1,9 +1,13 @@
 import './App.css'
-import TodoItem from "./components/TodoItem.tsx";
+import TodoList from "./components/TodoList.tsx";
 
 function App() {
 
-  return <TodoItem/>;
+  return (
+    <>
+      <TodoList></TodoList>
+    </>
+  )
 }
 
 export default App
