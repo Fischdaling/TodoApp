@@ -4,24 +4,39 @@ type Todo = {
     completed: boolean;
 };
 
+/*
+An attempt to make a class for Inputfield's useability, to no avail. 
+class Todo {
+    id: number;
+    task: string;
+    completed: boolean;
 
-function TodoItem(todo: Todo) {
+    "constructor"(number: number, string: string, boolean: boolean) {
+        this.id = number;
+        this.task = string;
+        this.completed = boolean
+    };
+};
+*/
+
+
+function TodoItem({id, task, completed}: Todo) {
     return (
         <>
             <input
                 type="checkbox"
-                checked={todo.completed}
+                checked={completed}
                 onChange={()=>{}} // call somthing
             />
 
             <p
                 style={{
                     flex: 1,
-                    textDecoration: todo.completed ? "line-through" : "none",
+                    textDecoration: completed ? "line-through" : "none",
                     margin: 0,
                 }}
             >
-                {todo.task}
+                {task}
             </p>
 
             <button onClick={() => {}}>
