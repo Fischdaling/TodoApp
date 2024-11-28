@@ -1,13 +1,9 @@
 import './App.css'
-import InputField from './components/InputField.tsx';
-import TodoItem from "./components/TodoItem.tsx";
+import InputField from "./components/InputField.tsx";
 
 function App() {
 
-  return (
-    <div id="Father">
-    <InputField/>
-    </div>);
+  return <InputField/>;
 }
 
 export default App

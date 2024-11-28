@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import TodoItem from "./TodoItem";
-import Todo from "./TodoItem";
 
 function InputField() {
     const [content, setContent] = useState("");
@@ -8,12 +7,13 @@ function InputField() {
         setContent(e.target.value);
     }
     const [count, setCount] = useState(0)
-
-    const todo = new Todo(0, "test", false);
     return (
     <>
     <input type="text" id="input" placeholder="Geben Sie hier Ihr TODO ein!" value={content} onChange={handleContentChange}/>
-    <button id="addButton" onClick={() => (setCount(count+1), TodoItem())}>Fügen Sie ein Todo ein!!</button>
+    <button id="addButton" onClick={() => {
+        setCount(count + 1);
+        TodoItem({id:count,task:content,completed:false});
+    }}>Fügen Sie ein Todo ein!!</button>
     </>
     );
 }

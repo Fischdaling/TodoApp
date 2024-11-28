@@ -1,26 +1,24 @@
-type Todo = {
+export type Todo = {
     id: number;
     task: string;
     completed: boolean;
 };
 
-/*
-An attempt to make a class for Inputfield's useability, to no avail. 
-class Todo {
-    id: number;
-    task: string;
-    completed: boolean;
-
-    "constructor"(number: number, string: string, boolean: boolean) {
-        this.id = number;
-        this.task = string;
-        this.completed = boolean
-    };
-};
-*/
+// // An attempt to make a class for Inputfield's useability, to no avail.
+// class Todo {
+//     id: number;
+//     task: string;
+//     completed: boolean;
+//
+//     "constructor"(number: number, string: string, boolean: boolean) {
+//         this.id = number;
+//         this.task = string;
+//         this.completed = boolean
+//     };
+// };
 
 
-function TodoItem({id, task, completed}: Todo) {
+function TodoItem({task, completed}: Todo) {
     return (
         <>
             <input

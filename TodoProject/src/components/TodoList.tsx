@@ -8,19 +8,36 @@ function TodoList() {
         { id: 3, task: "Master TypeScript", completed: false },
     ]);
 
-    const addTodo = () => {
+    const addTodo = (task:string) => {
         const newTodo = {
             id: todos.length + 1,
-            task: "task",
+            task: task,
             completed: false,
         };
         setTodos([...todos, newTodo]);
+        setTaskInput("");
+    };
+
+
+    const [taskInput, setTaskInput] = useState("");
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setTaskInput(e.target.value);
     };
 
     return (
         <>
             <h1>TODO APP</h1>
-            <button onClick={addTodo}>Add Todo</button>
+            <input
+                type="text"
+                value={taskInput}
+                onChange={handleInputChange}
+                placeholder="Enter new task"
+            />
+            <button onClick={() => addTodo(taskInput)}>
+                Add Todo
+            </button>
+
             <div>
                 {todos.map((todo) => (
                     <TodoItem id={todo.id} task={todo.task} completed={todo.completed}/>
