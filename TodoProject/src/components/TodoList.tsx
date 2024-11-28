@@ -1,5 +1,6 @@
+import { useState } from "react";
+import InputField from "./InputField";
 import TodoItem from "./TodoItem";
-import {useState} from "react";
 
 function TodoList() {
     const [todos, setTodos] = useState([
@@ -7,40 +8,36 @@ function TodoList() {
         { id: 2, task: "Build a Todo App", completed: false },
         { id: 3, task: "Master TypeScript", completed: false },
     ]);
+    const [count, setCount] = useState(4);
 
-    const addTodo = (task:string) => {
-        const newTodo = {
-            id: todos.length + 1,
-            task: task,
-            completed: false,
-        };
-        setTodos([...todos, newTodo]);
-        setTaskInput("");
+    // Function to add a new todo
+    const addTodo = (task: string) => {
+        if (task.trim() === "") return;
+
+        const newTodo = { id: count, task, completed: false };
+        setTodos((prevTodos) => [...prevTodos, newTodo]);
+        setCount((prevCount) => prevCount + 1);
     };
 
+    const toggleComplete = (id: number) => {
+        setTodos((todos) =>
+            todos.map((todo) =>
+                todo.id === id ? { ...todo, completed: !todo.completed } : todo
+            )
+        );
+    };
 
-    const [taskInput, setTaskInput] = useState("");
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setTaskInput(e.target.value);
+    const deleteTodo = (id: number) => {
+        setTodos((todos) => todos.filter((todo) => todo.id !== id));
     };
 
     return (
         <>
             <h1>TODO APP</h1>
-            <input
-                type="text"
-                value={taskInput}
-                onChange={handleInputChange}
-                placeholder="Enter new task"
-            />
-            <button onClick={() => addTodo(taskInput)}>
-                Add Todo
-            </button>
-
+            <InputField addTodo={addTodo} />
             <div>
                 {todos.map((todo) => (
-                    <TodoItem id={todo.id} task={todo.task} completed={todo.completed}/>
+                    <TodoItem key={todo.id} id={todo.id} task={todo.task} completed={todo.completed} deleteTodo={deleteTodo} toggleComplete={toggleComplete}/>
                 ))}
             </div>
         </>

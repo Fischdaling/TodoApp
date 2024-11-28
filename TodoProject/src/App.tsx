@@ -1,9 +1,13 @@
 import './App.css'
-import InputField from "./components/InputField.tsx";
+import TodoList from "./components/TodoList.tsx";
 
 function App() {
 
-  return <InputField/>;
+  return(
+      <>
+        <TodoList/>
+      </>
+  );
 }
 
 export default App

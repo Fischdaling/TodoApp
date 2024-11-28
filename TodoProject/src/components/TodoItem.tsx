@@ -1,32 +1,23 @@
+import React from "react";
 export type Todo = {
     id: number;
     task: string;
     completed: boolean;
 };
 
-// // An attempt to make a class for Inputfield's useability, to no avail.
-// class Todo {
-//     id: number;
-//     task: string;
-//     completed: boolean;
-//
-//     "constructor"(number: number, string: string, boolean: boolean) {
-//         this.id = number;
-//         this.task = string;
-//         this.completed = boolean
-//     };
-// };
+interface TodoItemProps extends Todo {
+    toggleComplete: (id: number) => void;
+    deleteTodo: (id: number) => void;
+}
 
-
-function TodoItem({task, completed}: Todo) {
+const TodoItem: React.FC<TodoItemProps> = ({id, task, completed, toggleComplete, deleteTodo}) => {
     return (
-        <>
+        <div style={{ display: "flex", alignItems: "center", width:"16.2%"}}>
             <input
                 type="checkbox"
                 checked={completed}
-                onChange={()=>{}} // call somthing
+                onChange={() => toggleComplete(id)}
             />
-
             <p
                 style={{
                     flex: 1,
@@ -36,12 +27,9 @@ function TodoItem({task, completed}: Todo) {
             >
                 {task}
             </p>
-
-            <button onClick={() => {}}>
-                Delete
-            </button>
-        </>
+            <button onClick={() => deleteTodo(id)}>Delete</button>
+        </div>
     );
-}
+};
 
 export default TodoItem;

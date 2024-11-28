@@ -1,28 +1,36 @@
-import React, {useState} from "react";
-import TodoItem from "./TodoItem";
+import React, { useState } from "react";
 
-function InputField() {
-    const [content, setContent] = useState("");
-    const handleContentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setContent(e.target.value);
-    }
-    const [count, setCount] = useState(0)
-    return (
-    <>
-    <input type="text" id="input" placeholder="Geben Sie hier Ihr TODO ein!" value={content} onChange={handleContentChange}/>
-    <button id="addButton" onClick={() => {
-        setCount(count + 1);
-        TodoItem({id:count,task:content,completed:false});
-    }}>Fügen Sie ein Todo ein!!</button>
-    </>
-    );
+interface InputFieldProps {
+    addTodo: (task: string) => void; // Function to add todo
 }
 
-export default InputField;
+const InputField: React.FC<InputFieldProps> = ({ addTodo }) => {
+    const [content, setContent] = useState(""); // To store the input value
 
-/*
-const [count, setCount] = useState(0)
-<button onClick={() => setCount((count) => count + 1)}>
-count is {count}
-</button>
-*/
+    // Handle the input field change
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setContent(e.target.value);
+    };
+
+    // Handle the button click to add a new todo
+    const handleAddClick = () => {
+        addTodo(content); // Call the addTodo function passed from TodoList
+        setContent(""); // Clear the input field after adding
+    };
+
+    return (
+        <div>
+            <input
+                type="text"
+                value={content}
+                onChange={handleInputChange}
+                placeholder="Enter new task"
+            />
+            <button id="addButton" onClick={handleAddClick}>
+                Fügen Sie ein Todo ein!!
+            </button>
+        </div>
+    );
+};
+
+export default InputField;
