@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25c21ead-0f2a-4c24-9628-d86a4be6c636" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoProject/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoProject/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoProject/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/src/index.css" afterDir="false" />
-    </list>
+    <list default="true" id="25c21ead-0f2a-4c24-9628-d86a4be6c636" name="Changes" comment="init" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,12 +13,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Fischdaling"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Fischdaling&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Fischdaling/TodoApp.git&quot;,
@@ -51,7 +46,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\onedrive\\Spengergasse\\4_Semester\\WMC\\TodoApp\\TodoProject\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\Samuel\\WebstormProjects\\TodoApp\\TodoProject\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
