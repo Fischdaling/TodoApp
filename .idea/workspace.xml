@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25c21ead-0f2a-4c24-9628-d86a4be6c636" name="Changes" comment="Totally not roboter revidsed" />
+    <list default="true" id="25c21ead-0f2a-4c24-9628-d86a4be6c636" name="Changes" comment="Shortly before death by c#">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoProject/src/components/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/src/components/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoProject/src/service/TodoService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoProject/src/service/TodoService.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +68,7 @@
       <map>
         <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
         <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
       </map>
     </option>
   </component>
@@ -84,6 +89,9 @@
       <updated>1732799774727</updated>
       <workItem from="1732799775528" duration="307000" />
       <workItem from="1732800968355" duration="1150000" />
+      <workItem from="1732825384993" duration="138000" />
+      <workItem from="1732990886948" duration="1275000" />
+      <workItem from="1732993170063" duration="397000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -141,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732815589258</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Shortly before death by c#">
+      <option name="closed" value="true" />
+      <created>1732816253907</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732816253907</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +181,7 @@
     <MESSAGE value="Add basic construct to TodoList and TodoItem" />
     <MESSAGE value="fixing issues" />
     <MESSAGE value="Totally not roboter revidsed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Totally not roboter revidsed" />
+    <MESSAGE value="Shortly before death by c#" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shortly before death by c#" />
   </component>
 </project>
